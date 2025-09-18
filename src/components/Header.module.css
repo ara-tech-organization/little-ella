@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap");
+
+.header {
+  font-family: "Fredoka", sans-serif;
+}
+body {
+  margin: 0;
+}
+/* Top Banner */
+.topBanner {
+  background-color: #1d62ae;
+  color: white;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ✅ centers nav items */
+  padding: 32px 40px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+   z-index: 1000;
+}
+
+/* Keep logo absolutely positioned on the left */
+.logo {
+  position: absolute;
+  left: 40px; /* adjust to match padding */
+  /* top: 2px; */
+}
+
+.logo img {
+  height: 73px;
+  width: 100%;
+}
+
+.navMenu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+.navItem a {
+  text-decoration: none; /* remove underline */
+  color: inherit; /* inherit the parent li color */
+  display: inline-block;
+  padding: 0.25rem 0; /* optional, for spacing */
+}
+
+.navItem a:hover {
+  /* color: #f39c12; */
+  border-bottom: 2px solid #f39c12;
+  text-decoration: none; /* just in case */
+}
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+.navItem {
+  margin: 0 14px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  position: relative;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.navItem:hover {
+  color: #1d62ae;
+}
+
+/* Active Tab */
+.active {
+  background-color: #fec224;
+  padding: 6px 14px !important;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.dropdown {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background-color: #fec224;
+  border-radius: 4px;
+  padding: 6px 0;
+  min-width: 180px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+
+  /* Reset defaults */
+  margin: 0;
+  padding-left: 20px; /* space for mini dots */
+}
+
+.dropdown li {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  padding: 6px 0;
+  list-style-type: disc; /* ✅ mini dots */
+  list-style-position: inside;
+}
+
+.dropdown li:hover {
+  /* background-color: rgba(0, 0, 0, 0.05); */
+}
+ .hamburger {
+  display: none;
+ }
+/* ---------- Mobile <576px ---------- */
+@media (max-width: 575.98px) {
+  .navbar {
+    padding: 16px 20px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    position: relative;
+    left: 0;
+  }
+
+  .navMenu {
+    display: none; /* hide menu */
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navMenu.open {
+    display: flex; /* show when hamburger clicked */
+  }
+
+  .navItem {
+    margin: 12px 0;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .dropdown {
+    position: relative;
+    top: auto;
+    left: auto;
+    box-shadow: none;
+    background: white !important;
+    padding-left: 0;
+    min-width: unset;
+  }
+.dropdown li {
+    list-style: none; /* remove mini dots */
+    padding: 8px 0;
+    text-align: center; /* align with mobile nav */
+    background: white !important;
+  }
+}
+
+/* ================= Portrait Phones / Large Phones (576px – 767px) ================= */
+@media (max-width: 767.98px) and (min-width: 576px) {
+  .navbar {
+    padding: 16px 20px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    position: relative;
+    left: 0;
+  }
+
+  .navMenu {
+    display: none; /* hide menu */
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+  }
+
+  .navMenu.open {
+    display: flex !important;
+  }
+
+
+
+  .navItem {
+    margin: 12px 0;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+/* ---------- Tablet 768–991px ---------- */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .navbar {
+    padding: 20px 30px;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .navMenu {
+    margin-left: 110px; /* 👈 pushes menu away from logo */
+  }
+
+  .navItem {
+    margin: 0 10px;
+    font-size: 15px;
+  }
+}
+
+/* ---------- Small Desktop 992–1199px ---------- */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar {
+    padding: 24px 40px;
+  }
+
+  .logo img {
+    height: 65px;
+  }
+
+  .navItem {
+    margin: 0 12px;
+    font-size: 16px;
+  }
+}
+
+/* ---------- Large Desktop 1200–1399px ---------- */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .navbar {
+    padding: 28px 50px;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  .navItem {
+    margin: 0 14px;
+    font-size: 16px;
+  }
+}
+
+/* ---------- Default ≥1400px ---------- */
+@media (min-width: 1400px) {
+  .navbar {
+    padding: 32px 60px;
+  }
+
+  .logo img {
+    height: 73px;
+  }
+}

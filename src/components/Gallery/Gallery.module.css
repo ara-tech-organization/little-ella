@@ -1,0 +1,132 @@
+.galleryWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+}
+.waves img {
+  display: block;
+  width: 100%;
+}
+.waves img {
+  display: block;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+.heading {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1d62ae;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+.galleryContainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  padding: 20px 0;
+}
+
+.galleryTrack {
+  display: flex;
+  width: max-content;
+}
+
+.galleryBlock {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  margin: 0 40px;
+}
+
+/* Layout A (your original) */
+.blockTypeA {
+  display: flex;
+  align-items: center;
+}
+
+.sideColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sideColumn img {
+  height: auto;
+  max-height: 450px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.centerImage {
+  margin: 0 30px;
+}
+
+.centerImage img {
+  height: auto;
+  max-height: 900px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* Layout B (Left big, Center stacked, Right big) */
+.blockTypeB {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bigImage img {
+  width: 380px;
+  height: 680px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.stackedColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stackedColumn img {
+  width: 520px;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Animations */
+.leftScroll .galleryTrack {
+  animation: scrollLeft 105s linear infinite;
+}
+
+.rightScroll .galleryTrack {
+  animation: scrollRight 105s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .galleryContainer:hover .galleryTrack,
+  .galleryContainer:active .galleryTrack {
+    animation-play-state: paused;
+  }
+}

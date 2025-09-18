@@ -1,0 +1,203 @@
+.facilities {
+  position: relative; /* required for overlay positioning */
+  padding: 3rem 2rem;
+  background: url("../../assets/Approach-bg.png") center/cover no-repeat;
+  text-align: center;
+  overflow: hidden; /* ensures overlay doesn’t spill out */
+}
+
+/* Overlay image */
+.facilities::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* covers the full section */
+  background: url("../../assets/Rectangle\ 80.png") center/cover no-repeat;
+  opacity: 0.9; /* adjust transparency if needed */
+  z-index: 0;
+}
+
+/* Ensure content sits above overlay */
+.facilities > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtext {
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* SVGs */
+.topLeft {
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+  width:150px;
+  height: auto;
+}
+
+.topRight {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  width: 150px;
+  height: auto;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0px); }
+}
+
+.topLeft,
+.topRight {
+  animation: float 2s ease-in-out infinite;
+}
+
+
+/* Grid centered */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 320px);
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  perspective: 1200px;
+  height: 360px;
+  cursor: pointer;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+  border-radius: 1rem;
+}
+
+.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+
+.front,
+.back {
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  color: #fff;
+}
+
+.front {
+  background: var(--cardColor);
+}
+
+.front h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.front img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+/* White curved label */
+.label {
+  background: #fff;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  justify-content: center;
+  font-size: 0.9rem;
+  margin: 0 auto;
+  width: fit-content;
+  font-family: "Fredoka", sans-serif;
+  border: none;           /* remove default border */
+  cursor: pointer;
+  outline: none;          /* remove focus outline */
+}
+
+.label:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
+.arrow {
+  background: var(--cardColor);
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Back */
+.back {
+  background: var(--cardColor);
+  padding: 1.5rem;
+  transform: rotateY(180deg);
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;   /* keeps left alignment */
+  justify-content: flex-start; /* no big gap */
+  gap: 1rem; /* space only between heading & paragraph */
+}
+
+
+.back h3 {
+  margin-bottom: 0.5rem;
+}
+
+.back p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 280px);
+  }
+}
+
+/* Mobile: 1 card */
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 280px;
+  }
+
+  .topLeft,
+  .topRight {
+    width: 50px;
+  }
+}

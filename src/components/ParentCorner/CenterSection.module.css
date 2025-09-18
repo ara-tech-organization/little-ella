@@ -1,0 +1,60 @@
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* full viewport height */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff; /* makes text stand out */
+  padding: 2rem;
+}
+
+/* Dark overlay for readability */
+.overlay {
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Main Center Image */
+.mainImage {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Heading */
+.heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: black;
+}
+
+/* Paragraph */
+.paragraph {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: black;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+  .paragraph {
+    font-size: 1rem;
+  }
+  .mainImage {
+    max-width: 90%;
+  }
+}

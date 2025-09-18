@@ -1,0 +1,22 @@
+.facilitiesImageSection {
+  position: relative;
+  width: 100%;
+  height: 600px; /* Adjust this value to control the height */
+  overflow: hidden;
+}
+
+.responsiveImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Light black overlay with 40% opacity */
+}

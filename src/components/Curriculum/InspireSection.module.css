@@ -1,0 +1,314 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  padding: 4rem 2rem;
+  overflow: hidden;
+  background-image: url("/src/assets/Approach-bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.kidWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.kidImg {
+  position: absolute;
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  background: #f6f6f6;
+  padding: 10px;
+  z-index: 1;
+}
+
+.kidLeft {
+  top: -30px;
+  left: -60px;
+}
+
+.kidRight {
+  bottom: -30px;
+  right: -60px;
+}
+
+.textBox {
+  background: #fff;
+  padding: 2rem 3rem; /* ⬅️ added left-right padding */
+  position: relative;
+  z-index: 2;
+  max-width: 700px; /* ⬅️ prevents text from being too wide */
+  margin: 0 auto; /* ⬅️ centers it */
+  text-align: center;
+}
+
+.textBox h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1d62ae;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.textBox p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.ctaWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.ctaSwirl {
+  width: 40px;
+  height: 40px;
+}
+
+.ctaBtn {
+  background: #1d62ae;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.ctaBtn:hover {
+  background: #1e40af;
+}
+
+/* -----------------------------
+   Base (>=1400px, desktops)
+----------------------------- */
+.wrapper {
+  position: relative;
+  width: 100%;
+  padding: 4rem 2rem;
+  background: #fff;
+  overflow: hidden;
+}
+
+.bgSwirl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.kidImg {
+  position: absolute;
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  background: #f6f6f6;
+  padding: 10px;
+  z-index: 1;
+}
+
+.kidLeft {
+  top: -30px;
+  left: -60px;
+}
+
+.kidRight {
+  bottom: -30px;
+  right: -60px;
+}
+
+.textBox {
+  background: #fff;
+  padding: 2rem 3rem;
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.textBox h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1d62ae;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.textBox p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.ctaWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.ctaSwirl {
+  width: 40px;
+  height: 40px;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.ctaBtn {
+  background: #1d62ae;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.ctaBtn:hover {
+  background: #1e40af;
+}
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* move up */
+  }
+  100% {
+    transform: translateY(0); /* back down */
+  }
+}
+/* -----------------------------
+   Breakpoints
+----------------------------- */
+
+/* <576px (extra small) */
+@media (max-width: 575.98px) {
+  .wrapper {
+    padding: 1rem 2rem;
+  }
+
+  .textBox {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .textBox h2 {
+    font-size: 1.3rem;
+  }
+
+  .kidImg {
+    display: none;
+  }
+
+  .kidLeft {
+    top: -15px;
+    left: -15px;
+  }
+
+  .kidRight {
+    bottom: -15px;
+    right: -15px;
+  }
+  .bgSwirl {
+    display: none;
+  }
+}
+
+/* 576px - 767px (small) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .textBox {
+    padding: 1.5rem;
+    max-width: 500px;
+  }
+
+  .textBox h2 {
+    font-size: 1.4rem;
+  }
+
+  .kidImg {
+    width: 110px;
+  }
+}
+
+/* 768px - 991px (medium) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .textBox {
+    max-width: 600px;
+  }
+
+  .textBox h2 {
+    font-size: 1.6rem;
+  }
+
+  .kidImg {
+    width: 120px;
+  }
+}
+
+/* 992px - 1199px (large) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .textBox {
+    max-width: 650px;
+  }
+
+  .textBox h2 {
+    font-size: 1.7rem;
+  }
+
+  .kidImg {
+    width: 140px;
+  }
+}
+
+/* 1200px - 1399px (extra large) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .textBox {
+    max-width: 700px;
+  }
+
+  .textBox h2 {
+    font-size: 1.8rem;
+  }
+
+  .kidImg {
+    width: 150px;
+  }
+}

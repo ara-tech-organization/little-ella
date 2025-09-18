@@ -1,0 +1,201 @@
+.curiosity {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 2rem;
+  position: relative;
+  font-family: "Fredoka", sans-serif;
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 60px;
+}
+
+.content {
+  max-width: 800px;
+  text-align: center;
+  position: relative; /* allows horseys to position inside */
+  padding: 2rem;
+}
+
+.heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #004aad;
+}
+
+/* Horsey base */
+.horsey {
+  width: 100px;
+  position: absolute;
+}
+
+/* Top-left horsey */
+.horsey1 {
+  top: -0px;
+  left: -100px;
+}
+
+/* Bottom-right horsey */
+.horsey2 {
+  bottom: -20px;
+  right: -100px;
+}
+.curiosity {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 2rem;
+  position: relative;
+  font-family: "Fredoka", sans-serif;
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 60px;
+}
+
+.content {
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  padding: 2rem;
+}
+
+.heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #004aad;
+}
+
+/* Horsey base */
+.horsey {
+  width: 100px;
+  position: absolute;
+}
+
+/* Top-left horsey */
+.horsey1 {
+  top: 0;
+  left: -100px;
+}
+
+/* Bottom-right horsey */
+.horsey2 {
+  bottom: -20px;
+  right: -100px;
+}
+
+/* -------------------- RESPONSIVE BREAKPOINTS -------------------- */
+
+/* < 576px (mobile) */
+@media (max-width: 575.98px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+  .text {
+    font-size: 0.9rem;
+  }
+  .horsey {
+    width: 60px;
+  }
+  .horsey1 {
+    left: 10px;
+    top: -10px;
+  }
+  .horsey2 {
+    right: 10px;
+    bottom: -10px;
+  }
+}
+
+/* 576px - 768px (small tablets) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .heading {
+    font-size: 1.6rem;
+  }
+  .text {
+    font-size: 1rem;
+  }
+  .horsey {
+    width: 70px;
+  }
+  .horsey1 {
+    left: 10px;
+  }
+  .horsey2 {
+    right: 10px;
+  }
+}
+
+/* 768px - 991px (tablets) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .heading {
+    font-size: 1.8rem;
+  }
+  .text {
+    font-size: 1.05rem;
+  }
+  .horsey {
+    width: 80px;
+  }
+  .horsey1 {
+    left: 10px;
+  }
+  .horsey2 {
+    right: 10px;
+  }
+}
+
+/* 992px - 1199px (small desktops) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .heading {
+    font-size: 2rem;
+  }
+  .text {
+    font-size: 1.1rem;
+  }
+  .horsey {
+    width: 90px;
+  }
+  .horsey1 {
+    left: 20px;
+  }
+  .horsey2 {
+    right: 20px;
+  }
+}
+
+/* 1200px - 1399px (large desktops) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .heading {
+    font-size: 2.2rem;
+  }
+  .text {
+    font-size: 1.15rem;
+  }
+  .horsey {
+    width: 100px;
+  }
+  .horsey1 {
+    left: -100px;
+  }
+  .horsey2 {
+    right: -100px;
+  }
+}

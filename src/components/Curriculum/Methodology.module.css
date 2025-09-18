@@ -1,0 +1,240 @@
+.wrapper {
+  position: relative;
+  padding: 5rem 1rem;
+  background: linear-gradient(135deg, #edfefc, #fef6ec);
+  background-image: url("/src/assets/Approach-bg.png");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.knot {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 80px;
+  z-index: 2;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.spark {
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+  width: 100px;
+  z-index: 2;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* move up */
+  }
+  100% {
+    transform: translateY(0); /* back down */
+  }
+}
+.content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1400px; /* increase max-width */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subText {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  background: #fff9f2;
+  color: #000;
+  border: 1px solid #fea439;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  z-index: 5;
+  font-weight: 400;
+}
+
+.arrow:hover {
+  transform: scale(1.1);
+}
+
+.arrow.left {
+  margin-right: 1rem;
+}
+
+.arrow.right {
+  margin-left: 1rem;
+}
+
+/* .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  flex: 1;
+} */
+
+/* Cards larger */
+.card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  flex: 0 0 30%; /* make each card take 30% of carousel width */
+  max-width: 450px; /* bigger max size */
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.card .description {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  border-radius: 0 0 12px 12px;
+  color: #fff;
+  padding: 0 1rem;
+}
+
+.card.active .description {
+  max-height: 170px; /* Adjust as needed */
+  opacity: 1;
+  margin-top: 10px;
+}
+
+.card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.grid {
+  display: flex; /* use flex instead of grid for more control */
+  gap: 2rem; /* space between cards */
+  justify-content: center;
+  width: 100%;
+}
+
+/* Single rectangle toggle bar */
+.toggleBar {
+  width: 20px; /* full bar width */
+  height: 8px;
+  background: #ccc;
+  margin: 2rem auto 0;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Moving indicator */
+.toggleIndicator {
+  width: 46.33%; /* because visibleCount = 3 and 4 possible positions */
+  height: 100%;
+  background: #1d62ae;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.activeRect {
+  background: #1d62ae;
+}
+/* Responsive */
+/* --------------------------
+   Extra large: 1200–1399px
+-------------------------- */
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .card {
+    flex: 0 0 32%; /* slightly smaller */
+    max-width: 400px;
+  }
+}
+
+/* --------------------------
+   Large: 992–1199px
+-------------------------- */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .card {
+    flex: 0 0 40%; /* 2 per row */
+    max-width: 380px;
+  }
+}
+
+/* --------------------------
+   Medium: 768–991px
+-------------------------- */
+@media (max-width: 991px) and (min-width: 768px) {
+  .grid {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 0 0 45%; /* 2 per row */
+    max-width: 350px;
+  }
+}
+
+/* --------------------------
+   Small: 576–767px
+-------------------------- */
+@media (max-width: 767px) and (min-width: 576px) {
+  .grid {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 0 0 80%; /* centered single card, but wider */
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+/* --------------------------
+   Extra small: < 576px
+-------------------------- */
+@media (max-width: 575px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    flex: 0 0 100%;
+    max-width: 280px;
+  }
+}

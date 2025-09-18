@@ -1,0 +1,238 @@
+/* 🔹 Base container */
+.container {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: url(../../assets/Approach-bg.png);
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+.heading {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+/* 🔹 Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* always 3 columns on tab & up */
+  gap: 2rem;
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+/* 🔹 Cards */
+.card {
+  width: 300px;
+  height: 290px;
+  perspective: 1000px;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.cardFront {
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+}
+
+.label {
+  background: #fff;
+  border-radius: 50px;
+  width: 80%;
+  margin-bottom: 12px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;         /* circle size */
+  height: 28px;
+  border-radius: 50%;  /* makes it a circle */
+  color: #fff;         /* arrow color */
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+
+.overlay {
+  position: absolute;
+  inset: 0; /* covers the full card */
+  border-radius: 50%;
+  opacity: 0.5; /* 50% transparent */
+  z-index: 1;
+}
+
+/* Ensure label stays on top of overlay */
+.label {
+  position: relative;
+  z-index: 2;
+}
+
+
+.cardBack {
+  transform: rotateY(180deg);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Unicorn + Sparks */
+.unicornBox {
+  position: relative;
+  display: inline-block; /* so sparks attach relative to unicorn size */
+}
+
+.unicorn {
+  width: 150px;
+  display: block;
+  position: relative;
+  z-index: 2;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+
+.pinkSpark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  transform: rotate(-10deg);
+  z-index: 3;
+  animation: sparklePink 2s ease-in-out infinite;
+}
+
+@keyframes sparklePink {
+  0%, 100% {
+    transform: translate(-40%, -40%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-40%, -40%) scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+
+.yellowSpark {
+  position: absolute;
+  bottom: 150px;
+  right: -15px;
+  width: 30%;
+  transform: rotate(-10deg);
+  z-index: 1;
+  animation: sparkleYellow 4s linear infinite;
+}
+
+@keyframes sparkleYellow {
+  0% {
+    transform: rotate(-10deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(20deg) scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(-10deg) scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
+/* 🔹 RESPONSIVE BREAKPOINTS */
+
+/* Tablets & above (always 3 cols) */
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card {
+    width: 220px;
+    height: 220px;
+  }
+  .unicorn {
+    width: 120px;
+  }
+  .pinkSpark,
+  .yellowSpark {
+    width: 28%;
+  }
+}
+
+/* Mobiles (stack 1 per row) */
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    width: 100%;
+    max-width: 280px;
+    height: 200px;
+  }
+  .heading {
+    font-size: 1.5rem;
+  }
+  .unicorn {
+    width: 90px;
+  }
+  .pinkSpark {
+    top: -15px;
+    left: 30%;
+    width: 20px;
+  }
+  .yellowSpark {
+    bottom: -5px;
+    right: -8px;
+    width: 18%;
+  }
+}
+

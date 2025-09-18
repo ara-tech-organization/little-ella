@@ -1,0 +1,143 @@
+.section {
+  position: relative;
+  width: 100%;
+  background: url("/bg-pattern.png") center/cover no-repeat;
+  padding: 3rem 1.5rem;
+}
+
+.topCurve {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.curveImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.leftImg {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.imgWrapper {
+  border-radius: 30% 30% 30% 30%;
+  overflow: hidden;
+  /* box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); */
+  max-width: 500px;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes floatImage {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0px); }
+}
+
+.img {
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+.content {
+  flex: 1;
+  text-align: left;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f97316;
+  margin-bottom: 1rem;
+}
+
+.subheading {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.text {
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Full-width text */
+.fullText {
+  max-width: 1100px;
+  margin: 0rem auto 0;
+  text-align: left;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.fullText p {
+  margin-bottom: 1rem;
+}
+
+/* ✅ Base mobile-first styles remain same */
+
+/* Tablet screens (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 2rem;
+  }
+
+  .leftImg {
+    flex: 0 0 40%; /* image takes 40% */
+    display: flex;
+    justify-content: center;
+  }
+
+  .content {
+    flex: 0 0 60%; /* text takes 60% */
+  }
+
+  .heading {
+    font-size: 2rem; /* smaller heading for tablets */
+  }
+}
+
+/* Laptop & above */
+@media (min-width: 1025px) {
+  .wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+    padding: 2rem 2rem;
+  }
+
+  .leftImg {
+    flex: 0 0 45%; /* image slightly bigger on large screens */
+  }
+
+  .content {
+    flex: 0 0 55%;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+}
