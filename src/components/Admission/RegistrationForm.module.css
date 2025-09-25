@@ -1,13 +1,36 @@
 .container {
   background-size: cover;
   background-position: center;
-  min-height: 120vh;
+  /* min-height: 120vh; */
   position: relative;
-  padding: 60px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1; /* keep content above overlay */
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.474);/* dark overlay, adjust 0.4 for opacity */
+  z-index: -1; /* push behind content */
+}
+.hiddenFile {
+  display: none; /* hide default ugly input */
+}
+
+.uploadBox label {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 
 .topLeft,
 .bottomRight {
@@ -19,13 +42,13 @@
 .topLeft {
   top: 20px;
   left: 20px;
-  animation-delay: 0s; /* starts immediately */
+  animation-delay: 5ms; /* starts immediately */
 }
 
 .bottomRight {
   bottom: 20px;
   right: 20px;
-  animation-delay: 2s; /* offset so they float alternately */
+  animation-delay: 5ms; /* offset so they float alternately */
 }
 
 @keyframes float {
@@ -88,6 +111,12 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.inputGroupFull textarea {
+  resize: none;
+  overflow: hidden;
+}
+
 
 .radioSection {
   margin-top: 20px;

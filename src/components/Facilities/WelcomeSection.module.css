@@ -3,7 +3,25 @@
   width: 100%;
   background: url("/bg-pattern.png") center/cover no-repeat;
   padding: 3rem 1.5rem;
+  overflow: hidden; /* so overlay doesn’t spill */
 }
+
+/* Overlay to fade background */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.422); /* white overlay → lightens background */
+  /* OR use black for darkening: rgba(0,0,0,0.4) */
+  z-index: 0;
+}
+
+/* Keep content visible above overlay */
+.section > * {
+  position: relative;
+  z-index: 1;
+}
+
 
 .topCurve {
   position: absolute;
@@ -35,7 +53,7 @@
 }
 
 .imgWrapper {
-  border-radius: 30% 30% 30% 30%;
+  border-radius: 5%;
   overflow: hidden;
   /* box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); */
   max-width: 500px;
@@ -47,15 +65,17 @@
   object-fit: cover;
   display: block;
 }
-
-@keyframes floatImage {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-25px); }
-  100% { transform: translateY(0px); }
+.founderName {
+  text-align: center; /* default for mobile */
+  font-weight: 600;
+  margin: 2rem 0;
 }
 
-.img {
-  animation: floatImage 4s ease-in-out infinite;
+/* Tablet and above */
+@media (min-width: 768px) {
+  .founderName {
+    text-align: right;
+  }
 }
 
 .content {

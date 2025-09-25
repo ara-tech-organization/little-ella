@@ -1,10 +1,22 @@
 .admissionSection {
   position: relative;
-  background-size: cover, cover;
-  background-position: center, center;
-  padding: 80px 20px;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
   color: #000;
   overflow: hidden;
+  z-index: 1;
+}
+
+.admissionSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5); /* adjust color + opacity */
+  z-index: -1;
 }
 
 .overlay {
@@ -89,35 +101,7 @@
   box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.15);
 }
 
-.unicorn {
-  position: absolute;
-  bottom: 2vw;        /* scale padding with screen */
-  right: 2vw;
-  width: 12vw;        /* scales with screen width */
-  max-width: 150px;   /* won’t grow too large */
-  min-width: 80px;    /* won’t shrink too small */
-  z-index: 2;
-  animation: floatUnicorn 3s ease-in-out infinite;
-}
 
-/* Float animation */
-@keyframes floatUnicorn {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-/* 📱 Mobile adjustments */
-@media (max-width: 768px) {
-  .unicorn {
-    width: 22vw;       /* bigger on smaller screens */
-    bottom: 10px;
-    right: 10px;
-  }
-}
 
 /* --- White label --- */
 .label {
@@ -161,6 +145,37 @@
   color: #222;
 }
 
+.unicorn {
+  position: absolute;
+  bottom: 0;        /* scale padding with screen */
+  right: 1vw;
+  width: 8vw;        /* scales with screen width */
+  max-width: 150px;   /* won’t grow too large */
+  min-width: 80px;    /* won’t shrink too small */
+  z-index: 2;
+  animation: floatUnicorn 3s ease-in-out infinite;
+}
+
+/* Float animation */
+@keyframes floatUnicorn {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 768px) {
+  .unicorn {
+    width: 22vw;       /* bigger on smaller screens */
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+
 /* Responsive */
 @media (max-width: 991px) {
   .grid {
@@ -171,6 +186,7 @@
 @media (max-width: 576px) {
   .grid {
     grid-template-columns: 1fr;
+    padding-top: 0px !important;
   }
 
   .labelBg{
@@ -180,6 +196,10 @@
   .labelContent h3{
     font-size: 1.1rem;
     text-align: center;
+  }
+
+  .admissionSection{
+    padding: 120px 20px;
   }
 }
 

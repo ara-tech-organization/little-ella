@@ -1,11 +1,26 @@
 /* 🔹 Base container */
 .container {
+  position: relative;
   text-align: center;
   padding: 2rem 1rem;
   background: url(../../assets/Approach-bg.png);
   background-size: contain;
   background-attachment: fixed;
+  z-index: 1;
 }
+
+/* overlay for background opacity */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.474); /* white overlay with 60% opacity */
+  z-index: -1; /* stay behind content */
+}
+
 
 .heading {
   font-size: 1.8rem;
@@ -108,10 +123,28 @@
   font-size: 1rem;
   border-radius: 15px;
   display: flex;
+   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
   padding: 1rem;
   text-align: center;
+    height: 100%; /* ensure it stretches fully */
+}
+
+.backTop {
+  width: 100%;
+  text-align: center;
+}
+
+.backBottom {
+  width: 100%;
+  text-align: center;
+}
+
+.backTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
 }
 
 /* Unicorn + Sparks */
@@ -126,7 +159,10 @@
   position: relative;
   z-index: 2;
   animation: float 3s ease-in-out infinite;
+  top: 80px; /* moves the unicorn lower */
+  left: 50px;
 }
+
 
 @keyframes float {
   0%, 100% {
@@ -140,8 +176,8 @@
 
 .pinkSpark {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50px;
+  left: 50px;
   width: 30%;
   transform: rotate(-10deg);
   z-index: 3;
@@ -159,11 +195,10 @@
   }
 }
 
-
 .yellowSpark {
   position: absolute;
-  bottom: 150px;
-  right: -15px;
+  bottom: 70px;
+  right:-80px;
   width: 30%;
   transform: rotate(-10deg);
   z-index: 1;
@@ -206,6 +241,10 @@
   .yellowSpark {
     width: 28%;
   }
+
+  .yellowSpark{
+    bottom: 30px;
+  }
 }
 
 /* Mobiles (stack 1 per row) */
@@ -223,16 +262,17 @@
   }
   .unicorn {
     width: 90px;
+    top:0 !important;
   }
   .pinkSpark {
     top: -15px;
-    left: 30%;
-    width: 20px;
+    left: 40%;
+    width: 22%;
   }
   .yellowSpark {
     bottom: -5px;
-    right: -8px;
-    width: 18%;
+    right: -80px;
+    width: 22%;
   }
 }
 

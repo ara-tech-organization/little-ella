@@ -1,8 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
 * { box-sizing: border-box; }
-html, body {
+html {
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* kill horizontal scroll */
   font-family: 'Fredoka', sans-serif; /* apply Fredoka everywhere */
+}
+body {
+  margin: 0;
+  padding-top: calc(32px + 95px); /* ✅ add topBanner + navbar height */
+  overflow-x: hidden;
+  font-family: 'Fredoka', sans-serif;
+}
+/* In your global CSS or ContactSection.module.css */
+input,
+textarea,
+button,
+select {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem; /* optional, match rest of text */
 }

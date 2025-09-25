@@ -1,10 +1,26 @@
 .facilities {
-  position: relative; /* required for overlay positioning */
+  position: relative;
   padding: 3rem 2rem;
   background: url("../../assets/Approach-bg.png") center/cover no-repeat;
   text-align: center;
-  overflow: hidden; /* ensures overlay doesn’t spill out */
+  overflow: hidden;
 }
+
+/* White overlay to lighten background */
+.facilities::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.386); /* adjust 0.6 -> lighter/darker */
+  z-index: 0;
+}
+
+/* Keep content above overlay */
+.facilities > * {
+  position: relative;
+  z-index: 1;
+}
+
 
 /* Overlay image */
 .facilities::before {
@@ -169,11 +185,9 @@
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;   /* keeps left alignment */
-  justify-content: flex-start; /* no big gap */
-  gap: 1rem; /* space only between heading & paragraph */
+  justify-content: space-between; /* pushes last item (button) to bottom */
+  align-items: flex-start;
 }
-
 
 .back h3 {
   margin-bottom: 0.5rem;
@@ -182,7 +196,14 @@
 .back p {
   font-size: 0.9rem;
   line-height: 1.4;
+  margin-bottom: auto; /* pushes button to the bottom */
 }
+
+.back .label {
+  align-self: center; /* keep button centered horizontally */
+  margin-top: auto;   /* ensures it sits at bottom */
+}
+
 
 @media (max-width: 1199px) and (min-width: 768px) {
   .grid {

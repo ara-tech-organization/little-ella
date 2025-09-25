@@ -34,20 +34,32 @@
 
 /* Horsey base */
 .horsey {
-  width: 100px;
+  width: 150px !important;
   position: absolute;
+  animation: floatDecor 3s ease-in-out infinite;
 }
 
 /* Top-left horsey */
 .horsey1 {
   top: -0px;
   left: -100px;
+  animation: floatDecor 3s ease-in-out infinite;
+}
+
+@keyframes floatDecor {
+   0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 /* Bottom-right horsey */
 .horsey2 {
   bottom: -20px;
   right: -100px;
+  animation: floatDecor 3s ease-in-out infinite;
 }
 .curiosity {
   display: flex;
@@ -116,11 +128,13 @@
   }
   .horsey1 {
     left: 10px;
-    top: -10px;
+    top: -20px;
+    width: 100px !important;
   }
   .horsey2 {
     right: 10px;
-    bottom: -10px;
+    bottom: -100px;
+    width: 100px !important;
   }
 }
 

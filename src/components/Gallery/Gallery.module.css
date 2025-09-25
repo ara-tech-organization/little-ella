@@ -54,7 +54,7 @@
 
 .sideColumn img {
   height: auto;
-  max-height: 450px;
+  max-height: 150px;
   border-radius: 10px;
   object-fit: cover;
 }
@@ -65,7 +65,7 @@
 
 .centerImage img {
   height: auto;
-  max-height: 900px;
+  max-height: 300px;
   border-radius: 14px;
   object-fit: cover;
 }
@@ -78,8 +78,8 @@
 }
 
 .bigImage img {
-  width: 380px;
-  height: 680px;
+  width: 280px;
+  height: 315px;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -92,14 +92,14 @@
 
 .stackedColumn img {
   width: 520px;
-  height: 330px;
+  height: 150px;
   object-fit: cover;
   border-radius: 12px;
 }
 
 /* Animations */
 .leftScroll .galleryTrack {
-  animation: scrollLeft 105s linear infinite;
+  animation: scrollLeft 55s linear infinite;
 }
 
 .rightScroll .galleryTrack {

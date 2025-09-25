@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom"; // ✅ use NavLink
 import styles from "./Header.module.css";
+import logo from "/src/assets/logo.png";
 
 const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -16,7 +17,7 @@ const Header = () => {
         {/* Logo */}
         <div className={styles.logo}>
           <NavLink to="/">
-            <img src="src/assets/logo.png" alt="Little Ella" />
+            <img src={logo} alt="Enquiry" />
           </NavLink>
         </div>
 
@@ -92,10 +93,9 @@ const Header = () => {
               className={({ isActive }) =>
                 isActive ? `${styles.link} ${styles.active}` : styles.link
               }
-              onClick={(e) => {
+              onClick={() => {
                 if (window.innerWidth <= 768) {
-                  e.preventDefault();
-                  setDropdownOpen((prev) => !prev);
+                  setDropdownOpen((prev) => !prev); // toggle dropdown
                 }
               }}
             >

@@ -74,6 +74,7 @@ width: 100px;
   margin: 10px 0 16px;
   font-size: 18px;
   font-weight: bold;
+  text-decoration: none ;
 }
 
 .links {
@@ -83,12 +84,23 @@ width: 100px;
   grid-template-columns: repeat(5, 1fr); /* 5 columns */
   grid-template-rows: repeat(2, auto);  /* 2 rows */
   gap: 10px 30px; /* spacing between items */
+  text-decoration: none !important;
 }
 
 .links li {
   font-size: 14px;
   cursor: pointer;
   white-space: nowrap; /* keeps text in one line */
+  text-decoration: none !important;
+}
+.links li a {
+  text-decoration: none; /* remove underline */
+  color: inherit;        /* inherit color from parent */
+  transition: color 0.3s;
+}
+
+.links li a:hover {
+  color: #FEA439; /* optional hover effect */
 }
 
 
@@ -132,6 +144,7 @@ width: 100px;
   display: flex;
   gap: 12px;
   align-items: flex-start;
+  text-align: start;
   line-height: 1.5;
 }
 
@@ -213,6 +226,7 @@ width: 100px;
   .links {
    grid-template-columns: repeat(2, 1fr);
     text-align: center;
+
   }
 
   .contactWrapper {

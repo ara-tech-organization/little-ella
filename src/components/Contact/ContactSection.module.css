@@ -87,6 +87,14 @@
 .form button:hover {
   background: #003080;
 }
+.mobileGroup {
+  display: flex;
+  gap: 1rem; /* space between left & right fields */
+}
+
+.mobileGroup input {
+  flex: 1; /* both take equal width */
+}
 
 .mapContainer {
   border-radius: 12px;

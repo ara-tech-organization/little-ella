@@ -69,6 +69,7 @@ export default function FoundingYear() {
         <img src={cloudLeft} alt="cloud" className={styles.cloudLeft} />
         <img src={Swirl} alt="Swirl" className={styles.swirlDecor} />
         <img src={Decor} alt="Center Decor" className={styles.centerDecor} />
+        <img src={Decor} alt="Center Decor" className={styles.rightDecor} />
         <img src={Leaf} alt="Leaf" className={styles.leafDecor} />
       </div>
     </section>

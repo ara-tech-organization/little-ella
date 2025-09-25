@@ -43,13 +43,14 @@
   justify-content: center;
   background: #fff;
   z-index: 2;
-  transform: translateX(-120%);
-  transition: transform 0.8s ease;
+  transform: translateX(0); /* ICON STAYS FIXED */
+  transition: none;         /* no animation on icon */
 }
 
 .card.animate .iconCircle {
-  transform: translateX(0);
+  transform: translateX(0); /* stays fixed even after animation */
 }
+
 
 
 .icon {
@@ -57,8 +58,6 @@
   height: 155px;
   object-fit: contain;
 }
-
-
 
 .contentBox {
   flex: 1;
@@ -68,12 +67,16 @@
   background: #fff8ec;
   margin-left: -80px;
   padding: 1rem 1.5rem 1rem 6rem;
-  transform: translateX(120%);
-  transition: transform 0.8s ease 0.2s; /* delay for staggered effect */
+
+  /* start hidden behind circle */
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.6s ease;
 }
 
 .card.animate .contentBox {
-  transform: translateX(0);
+  transform: translateX(0);  /* slide out of circle */
+  opacity: 1;
 }
 
 

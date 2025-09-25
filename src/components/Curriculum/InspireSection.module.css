@@ -29,12 +29,22 @@
 
 .kidImg {
   position: absolute;
-  width: 150px;
+  width: 200px !important;
   height: auto;
   border-radius: 50%;
   background: #f6f6f6;
   padding: 10px;
   z-index: 1;
+  animation: floatkid 3s ease-in-out infinite;
+}
+/* Float animation */
+@keyframes floatkid {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 .kidLeft {
@@ -43,18 +53,28 @@
 }
 
 .kidRight {
-  bottom: -30px;
+  top: 70px;
   right: -60px;
 }
 
 .textBox {
   background: #fff;
-  padding: 2rem 3rem; /* ⬅️ added left-right padding */
-  position: relative;
+  padding: 2rem 3rem;
+  position: relative;  /* 👈 important so swirl anchors here */
   z-index: 2;
-  max-width: 700px; /* ⬅️ prevents text from being too wide */
-  margin: 0 auto; /* ⬅️ centers it */
+  max-width: 700px;
+  margin: 0 auto;
   text-align: center;
+}
+
+.ctaSwirl {
+  position: absolute;
+  bottom: 40px;   /* ⬅️ moves it out of the box */
+  left: 30%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  z-index: 0;      /* sits behind button if needed */
 }
 
 .textBox h2 {
@@ -79,10 +99,10 @@
   justify-content: center;
 }
 
-.ctaSwirl {
+/* .ctaSwirl {
   width: 40px;
   height: 40px;
-}
+} */
 
 .ctaBtn {
   background: #1d62ae;

@@ -6,7 +6,6 @@
 body {
   margin: 0;
 }
-/* Top Banner */
 .topBanner {
   background-color: #1d62ae;
   color: white;
@@ -14,19 +13,31 @@ body {
   padding: 6px 0;
   font-size: 14px;
   font-weight: 500;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000; /* above everything else */
 }
 
-
+/* 🔹 Navbar Fixed below top banner */
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center; /* ✅ centers nav items */
+  justify-content: center;
   padding: 32px 40px;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  position: relative;
-   z-index: 1000;
+
+  position: fixed;
+  top: 30px; /* same as topBanner height */
+  left: 0;
+  width: 100%;
+  z-index: 9999;
 }
+
+
 
 /* Keep logo absolutely positioned on the left */
 .logo {
@@ -123,7 +134,7 @@ body {
 /* ---------- Mobile <576px ---------- */
 @media (max-width: 575.98px) {
   .navbar {
-    padding: 16px 20px;
+    padding: 5px 20px;
     justify-content: space-between;
   }
 
@@ -136,7 +147,7 @@ body {
     display: none; /* hide menu */
     flex-direction: column;
     position: absolute;
-    top: 100px;
+    top: 60px;
     left: 0;
     width: 100%;
     background: white;
@@ -172,6 +183,13 @@ body {
     text-align: center; /* align with mobile nav */
     background: white !important;
   }
+  .dropdown li a {
+  background: transparent !important;
+  border-radius: 0 !important;
+  display: block;       /* makes the whole area clickable */
+  padding: 8px 10px;    /* keep consistent spacing */
+}
+
 }
 
 /* ================= Portrait Phones / Large Phones (576px – 767px) ================= */
