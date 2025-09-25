@@ -1,12 +1,25 @@
 .wrapper {
   position: relative;
   padding: 5rem 1rem;
-  background: linear-gradient(135deg, #edfefc, #fef6ec);
-  background-image: url("/src/assets/Approach-bg.png");
-  background-size: cover;
-  background-position: center;
   overflow: hidden;
+  background: linear-gradient(135deg, #edfefc, #fef6ec);
 }
+
+/* overlay with reduced opacity */
+.wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background: linear-gradient(135deg, #edfefc, #fef6ec);
+  opacity: 0.4; /* only background is faded */
+  z-index: 0;
+}
+
+.wrapper > * {
+  position: relative; /* make content above overlay */
+  z-index: 1;
+}
+
 
 .knot {
   position: absolute;
@@ -106,29 +119,38 @@
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  flex: 0 0 30%; /* make each card take 30% of carousel width */
-  max-width: 450px; /* bigger max size */
+  flex: 0 0 30%;
+  max-width: 450px;
   overflow: hidden;
+  position: relative; /* important for absolute positioning inside */
 }
+
 .card img {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 0.8rem;
 }
 
+.card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* description stays on top of card content */
+
 .card .description {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transition: all 0.3s ease;
-
   border-radius: 0 0 12px 12px;
   color: #fff;
   padding: 0 1rem;
 }
 
 .card.active .description {
-  max-height: 170px; /* Adjust as needed */
+  max-height: 170px; /* adjust as needed */
   opacity: 1;
   margin-top: 10px;
 }
@@ -145,11 +167,13 @@
 }
 
 .grid {
-  display: flex; /* use flex instead of grid for more control */
-  gap: 2rem; /* space between cards */
+  display: flex;
+  gap: 2rem;
   justify-content: center;
+  align-items: flex-start; /* 👈 key change */
   width: 100%;
 }
+
 
 /* Single rectangle toggle bar */
 .toggleBar {

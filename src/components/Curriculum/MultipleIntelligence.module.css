@@ -2,6 +2,9 @@
   text-align: center;
   padding: 4rem 2rem;
   background: #fff;
+    background-image: url("/src/assets/Approach-bg.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .heading {
@@ -27,19 +30,22 @@
 
 .card {
   display: flex;
-  align-items: center; /* icon + text aligned vertically */
+  align-items: center;
   padding: 1rem;
   border: 2px dotted;
   border-radius: 15px;
   background: #fff;
   cursor: pointer;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   gap: 1rem;
+   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+   padding: 1.5rem;          /* increase padding gradually */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  transform: scale(1.03);    /* slightly grow card */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .iconWrapper {
@@ -66,7 +72,7 @@
   font-size: 1rem;
   font-weight: 600;
   margin: 0;
-  transition: transform 0.3s ease;
+   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .subtitle {
@@ -75,7 +81,7 @@
   margin-top: 0.2rem;
   opacity: 0;
   transform: translateY(5px);
-  transition: all 0.3s ease;
+   transition: opacity 0.4s ease, transform 0.4s ease;
   align-items: start !important;
 }
 

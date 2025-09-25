@@ -166,7 +166,15 @@
   z-index: -10;
   animation: floatUpDown 5s ease-in-out infinite;
 }
-
+.rightDecor {
+  position: absolute;
+  top: 170px;
+  left: 100%;
+  transform: translateX(-50%);
+  width: 80px;
+  z-index: -10;
+  animation: floatUpDown 5s ease-in-out infinite;
+}
 .leafDecor {
   position: absolute;
   bottom: 0;

@@ -8,7 +8,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000; /* above hero */
+  z-index: 2000;
+  overflow-y: auto; /* ✅ allow scrolling if modal taller than viewport */
+  padding: 1rem; /* spacing so modal isn’t cut at edges */
 }
 .heading {
   text-align: center;
@@ -23,8 +25,9 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  max-height: 90vh;      /* ✅ prevent modal from being taller than screen */
+  overflow-y: auto;      /* ✅ enable scrolling inside modal */
 }
-
 .closeBtn {
   position: absolute;
   top: 10px;
@@ -98,7 +101,8 @@
 @media (max-width: 575.98px) {
   .modal {
     max-width: 95%;
-    margin-top: 10px;
+    margin-top: 200px;
+    overflow-y: scroll;
 
   }
 

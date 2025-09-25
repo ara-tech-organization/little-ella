@@ -6,6 +6,7 @@ import horsy from "/src/assets/horsy.png";
 import wave from "/src/assets/wave.png";
 import line from "/src/assets/lines.png";
 import leftline from "/src/assets/left-line.png";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -34,16 +35,17 @@ export default function Footer() {
           {/* Quick Links */}
           <h4 className={styles.quickTitle}>Quick Links</h4>
           <ul className={styles.links}>
-            <li>About Us</li>
-            <li>Home</li>
-            <li>Admission</li>
-            <li>Curriculum</li>
-            <li>Facilities</li>
-            <li>Testimonial</li>
-            <li>Parent Corner</li>
-            <li>News/Events</li>
-            <li>Contact Us</li>
-            <li>Gallery</li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+
+            <li><Link to="/admission">Admission</Link></li>
+            <li><Link to="/curriculum">Curriculum</Link></li>
+            <li><Link to="/facilities">Facilities</Link></li>
+            <li><Link to="/parentCorner#testimonial">Testimonial</Link></li>
+            <li><Link to="/parent-corner">Parent Corner</Link></li>
+            <li><Link to="/parentCorner#newevents">News/Events</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
+            <li><Link to="/gallery">Gallery</Link></li>
           </ul>
         </div>
 
@@ -96,7 +98,7 @@ export default function Footer() {
       <div className={styles.bottom}>
         <p>copyright © 2025 Little Ella || All Rights Reserved</p>
         <p>
-          Crafted with ❤️ by <span>ARA Discover Technologies.</span>
+          Designed and developed by Caprics
         </p>
       </div>
     </footer>

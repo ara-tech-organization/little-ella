@@ -79,12 +79,12 @@
 }
 
 .moveLeft {
-  animation: scrollLeft 20s linear infinite;
+  animation: scrollLeft 35s linear infinite;
   animation-delay: 3s;
 }
 
 .moveRight {
-  animation: scrollRight 20s linear infinite;
+  animation: scrollRight 35s linear infinite;
   animation-delay: 4s;
 }
 

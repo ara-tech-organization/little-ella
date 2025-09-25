@@ -13,8 +13,16 @@ export default function InspireSection() {
 
       <div className={styles.container}>
         {/* Kid images positioned around text */}
-        <img src={kid1} alt="Kid smiling" className={`${styles.kidImg} ${styles.kidLeft}`} />
-        <img src={kid2} alt="Kid learning" className={`${styles.kidImg} ${styles.kidRight}`} />
+        <img
+          src={kid1}
+          alt="Kid smiling"
+          className={`${styles.kidImg} ${styles.kidLeft}`}
+        />
+        <img
+          src={kid2}
+          alt="Kid learning"
+          className={`${styles.kidImg} ${styles.kidRight}`}
+        />
 
         {/* Text content */}
         <div className={styles.textBox}>
@@ -28,8 +36,11 @@ export default function InspireSection() {
             touch of Montessori philosophy, sets the stage for a fulfilling
             educational journey for your toddler or kindergartener.
           </p>
+
+          {/* Swirl OUTSIDE wrapper */}
+          <img src={swirl} alt="blue swirl" className={styles.ctaSwirl} />
+
           <div className={styles.ctaWrapper}>
-            <img src={swirl} alt="blue swirl" className={styles.ctaSwirl} />
             <button className={styles.ctaBtn}>Call for Inquiries →</button>
           </div>
         </div>

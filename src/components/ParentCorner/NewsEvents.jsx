@@ -1,66 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./NewsEvents.module.css";
 import { FaArrowDown } from "react-icons/fa6";
-import { Link } from "react-router-dom"; // ✅ import Link
-
-const newsItems = [
-  {
-    id: 1,
-    title: "News heading",
-    text: "Get in touch with us for admissions, inquiries, or support. We’re here to assist you with all your questions about our school.",
-  },
-  {
-    id: 2,
-    title: "News heading",
-    text: "Get in touch with us for admissions, inquiries, or support. We’re here to assist you with all your questions about our school.",
-  },
-  {
-    id: 3,
-    title: "News heading",
-    text: "Get in touch with us for admissions, inquiries, or support. We’re here to assist you with all your questions about our school.",
-  },
-  {
-    id: 4,
-    title: "News heading",
-    text: "Get in touch with us for admissions, inquiries, or support. We’re here to assist you with all your questions about our school.",
-  },
-  {
-    id: 5,
-    title: "News heading",
-    text: "Get in touch with us for admissions, inquiries, or support. We’re here to assist you with all your questions about our school.",
-  },
-  {
-    id: 6,
-    title: "News heading",
-    text: "Get in touch with us for admissions, inquiries, or support. We’re here to assist you with all your questions about our school.",
-  },
-];
 
 export default function NewsEvents() {
+  const [newsItems, setNewsItems] = useState([]);
+
+  useEffect(() => {
+    fetch("https://little-ella.azurewebsites.net/api/news")
+      .then((res) => res.json())
+      .then((data) => setNewsItems(data))
+      .catch((err) => console.error("Error fetching news:", err));
+  }, []);
+
+  const openNewsDetails = (id) => {
+    // Open in new tab and pass the news id via URL
+    window.open(`/news/${id}`, "_blank");
+  };
+
   return (
-    <section data-aos="fade-up" id="newevents" className={styles.newsSection}>
+    <section className={styles.newsSection}>
       <div className={styles.header}>
         <h2 className={styles.title}>Latest News/Events</h2>
         <p className={styles.subtitle}>
-          Stay updated with our school’s latest news, announcements, and upcoming events.
+          Stay updated with our school’s latest news, announcements, and
+          upcoming events.
         </p>
       </div>
 
       <div className={styles.grid}>
         {newsItems.map((item) => (
-          <Link
-            to={`/newsdetails`} // ✅ unique route per news
-            key={item.id}
-            className={styles.card} // ✅ so it keeps card style
-          >
-            <div>
-              <h3 className={styles.cardTitle}>{item.title}</h3>
-              <p className={styles.cardText}>{item.text}</p>
+          <div key={item._id} className={styles.card}>
+            <h3 className={styles.cardTitle}>{item.title}</h3>
+
+            <div className={styles.cardBody}>
+              {item.imageUrl && (
+                <img
+                  src={item.imageUrl}
+                  alt="news"
+                  className={styles.thumbImage}
+                />
+              )}
+
+              <p className={styles.cardText}>
+                {item.description.length > 150
+                  ? item.description.slice(0, 150) + "..."
+                  : item.description}
+              </p>
+
+              <div className={styles.cardActions}>
+                <i
+                  className={styles.icon}
+                  onClick={() => openNewsDetails(item._id)}
+                >
+                  <FaArrowDown />
+                </i>
+              </div>
             </div>
-            <i className={styles.icon}>
-              <FaArrowDown />
-            </i>
-          </Link>
+          </div>
         ))}
       </div>
     </section>

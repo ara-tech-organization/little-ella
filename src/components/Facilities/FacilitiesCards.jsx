@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./FacilitiesCards.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,6 +14,10 @@ import img1064 from "../../assets/image 1064.png";
 
 import TopLeftSVG from "../../assets/spiralArrow.png";
 import TopRightSVG from "../../assets/Spark.png";
+
+// ✅ AOS Import
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const cardsData = [
   {
@@ -67,17 +71,34 @@ const Facilities = () => {
     setFlippedCard(flippedCard === idx ? null : idx);
   };
 
+  // ✅ Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      offset: 100,
+    });
+  }, []);
+
   return (
-    <section className={styles.facilities}>
+    <section
+      className={styles.facilities}
+      data-aos="fade-up"       // entire section animation
+      data-aos-delay="100"
+    >
+      {/* Floating Decorations */}
       <img src={TopLeftSVG} alt="Decoration" className={styles.topLeft} />
       <img src={TopRightSVG} alt="Decoration" className={styles.topRight} />
 
+      {/* Heading */}
       <h2 className={styles.heading}>Facilities at Little Ella</h2>
       <p className={styles.subtext}>
         We place the child at the center of our curriculum, ensuring that their
         interests and learning styles are considered.
       </p>
 
+      {/* Cards (no individual AOS) */}
       <div className={styles.grid}>
         {cardsData.map((card, idx) => (
           <div
