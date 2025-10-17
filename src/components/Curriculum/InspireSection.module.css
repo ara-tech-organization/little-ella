@@ -113,6 +113,7 @@
   border-radius: 999px;
   cursor: pointer;
   transition: background 0.3s ease;
+  text-decoration: none;
 }
 
 .ctaBtn:hover {

@@ -10,7 +10,32 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.topBanner}>
-        📢 Applications open 25 - 26 April!! 📢
+        <div className={styles.scrollWrapper}>
+          <div className={styles.scrollText}>
+            📢 Admissions Open 2025 - 26 April 📢
+          </div>
+          <div className={styles.scrollText}>
+            📢 Admissions Open 2025 - 26 April 📢
+          </div>
+           <div className={styles.scrollText}>
+            📢 Admissions Open 2025 - 26 April 📢
+          </div>
+           <div className={styles.scrollText}>
+            📢 Admissions Open 2025 - 26 April 📢
+          </div>
+           <div className={styles.scrollText}>
+            📢 Admissions Open 2025 - 26 April 📢
+          </div>
+           <div className={styles.scrollText}>
+            📢 Admissions Open 2025 - 26 April 📢
+          </div>
+           <div className={styles.scrollText}>
+            📢 Admissions Open 2025 - 26 April 📢
+          </div>
+           <div className={styles.scrollText}>
+            📢 Admissions Open 2025 - 26 April 📢
+          </div>
+        </div>
       </div>
 
       <nav className={styles.navbar}>

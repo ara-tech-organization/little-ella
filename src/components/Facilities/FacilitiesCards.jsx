@@ -120,7 +120,7 @@ const Facilities = () => {
                   <div className={styles.arrow}>
                     <FontAwesomeIcon icon={faArrowRight} />
                   </div>
-                  <span>Know More</span>
+                  {/* <span>Know More</span> */}
                 </button>
               </div>
 

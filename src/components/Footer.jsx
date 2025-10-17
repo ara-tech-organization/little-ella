@@ -27,25 +27,45 @@ export default function Footer() {
           </div>
 
           {/* Bottom line with horsy */}
-          <div className={styles.bottomLineBox}>
+          {/* <div className={styles.bottomLineBox}>
             <img src={horsy} alt="Horsey" className={styles.horsy} />
             <img src={line} alt="line" className={styles.bottomLine} />
-          </div>
+          </div> */}
 
           {/* Quick Links */}
           <h4 className={styles.quickTitle}>Quick Links</h4>
           <ul className={styles.links}>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About Us</Link></li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
 
-            <li><Link to="/admission">Admission</Link></li>
-            <li><Link to="/curriculum">Curriculum</Link></li>
-            <li><Link to="/facilities">Facilities</Link></li>
-            <li><Link to="/parentCorner#testimonial">Testimonial</Link></li>
-            <li><Link to="/parent-corner">Parent Corner</Link></li>
-            <li><Link to="/parentCorner#newevents">News/Events</Link></li>
-            <li><Link to="/contact">Contact Us</Link></li>
-            <li><Link to="/gallery">Gallery</Link></li>
+            <li>
+              <Link to="/admission">Admission</Link>
+            </li>
+            <li>
+              <Link to="/curriculum">Curriculum</Link>
+            </li>
+            <li>
+              <Link to="/facilities">Facilities</Link>
+            </li>
+            <li>
+              <Link to="/parentCorner#testimonial">Testimonial</Link>
+            </li>
+            <li>
+              <Link to="/parentCorner">Parent Corner</Link>
+            </li>
+            <li>
+              <Link to="/parentCorner#newevents">News/Events</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact Us</Link>
+            </li>
+            <li>
+              <Link to="/gallery">Gallery</Link>
+            </li>
           </ul>
         </div>
 
@@ -58,28 +78,53 @@ export default function Footer() {
               <div className={styles.lineItem}>
                 <i className="fas fa-map-marker-alt"></i>
                 <p>
-                  No. 482 H I G 1st Main Road, ERI Scheme Mogappair West,
-                  Chennai-600037
+                  <a
+                    href="https://maps.app.goo.gl/UBtbfRX1FFZc5w966?g_st=aw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
+                    No. 482 H I G 1st Main Road, ERI Scheme Mogappair West,
+                    Chennai-600037
+                  </a>
                 </p>
               </div>
+
               <div className={styles.lineItem}>
                 <i className="fas fa-phone-alt"></i>
-                <p>9790056699 / 9840145678</p>
+                <p>
+                  <a href="tel:9790056699" className={styles.link}>
+                    9790056699
+                  </a>{" "}
+                  /{" "}
+                  <a href="tel:9840145678" className={styles.link}>
+                    9840145678
+                  </a>
+                </p>
               </div>
+
               <div className={styles.lineItem}>
                 <i className="fas fa-envelope"></i>
-                <p>littleellaschool@gmail.com</p>
+                <p>
+                  <a
+                    href="mailto:littleellaschool@gmail.com"
+                    className={styles.link}
+                  >
+                    littleellaschool@gmail.com
+                  </a>
+                </p>
               </div>
+
               <div className={styles.follow}>
                 <span>Follow us on</span>
                 <div className={styles.socials}>
-                  <a href="#">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-facebook-f"></i>
                   </a>
-                  <a href="#">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-instagram"></i>
                   </a>
-                  <a href="#">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-youtube"></i>
                   </a>
                 </div>
@@ -96,10 +141,8 @@ export default function Footer() {
 
       {/* Footer Bottom */}
       <div className={styles.bottom}>
-        <p>copyright © 2025 Little Ella || All Rights Reserved</p>
-        <p>
-          Designed and developed by Caprics
-        </p>
+        <p>copyright © 2025 - 2026 Little Ella | All Rights Reserved</p>
+        <p>Designed and developed by Caprics</p>
       </div>
     </footer>
   );

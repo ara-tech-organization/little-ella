@@ -103,7 +103,22 @@ width: 100px;
   color: #FEA439; /* optional hover effect */
 }
 
+.link {
+  color: inherit; /* Keep same color as text */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
+.link:hover {
+  color: #1e6f72; /* Highlight color on hover */
+  text-decoration: underline;
+}
+
+.lineItem i {
+  color: #1e6f72;
+  margin-right: 10px;
+  font-size: 18px;
+}
 /* Contact Card */
 .contactCard {
   flex: 1;

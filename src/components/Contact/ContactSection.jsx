@@ -114,14 +114,14 @@ export default function ContactSection() {
         <div className={styles.mapContainer}>
           <iframe
             title="Little Ella Map"
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3886.3337690517906!2d80.17488329582824!3d13.078020792552113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDA0JzQwLjgiTiA4MMKwMTAnMzguOSJF!5e0!3m2!1sen!2sin!4v1758184633384!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3886.334411817036!2d80.17751899999999!3d13.077980000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDA0JzQwLjciTiA4MMKwMTAnMzkuMSJF!5e0!3m2!1sen!2sin!4v1760607011439!5m2!1sen!2sin"
             width="600"
             height="450"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-          />
+          ></iframe>
         </div>
       </div>
 
@@ -139,13 +139,29 @@ export default function ContactSection() {
           <span className={styles.iconCircle}>
             <FaPhoneAlt />
           </span>
-          <p>9790056699 / 9840145678</p>
+          <p>
+            <a href="tel:9790056699" className={styles.phoneLink}>
+              9790056699
+            </a>{" "}
+            /{" "}
+            <a href="tel:9840145678" className={styles.phoneLink}>
+              9840145678
+            </a>
+          </p>
         </div>
+
         <div className={styles.footerItem}>
           <span className={styles.iconCircle}>
             <FaEnvelope />
           </span>
-          <p>littleellaschool@gmail.com</p>
+          <p>
+            <a
+              href="mailto:littleellaschool@gmail.com"
+              className={styles.emailLink}
+            >
+              littleellaschool@gmail.com
+            </a>
+          </p>
         </div>
       </div>
     </div>

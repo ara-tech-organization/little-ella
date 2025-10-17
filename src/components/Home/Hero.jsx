@@ -4,8 +4,8 @@ import Modal from "./Modal";
 
 // Import images as modules
 import hero1 from "/src/assets/hero-1.jpg";
-import hero2 from "/src/assets/hero-2.png";
-import hero3 from "/src/assets/gallery7.png";
+import hero2 from "/src/assets/hero-2.jpg";
+import hero3 from "/src/assets/hero-3.jpg";
 
 const images = [hero1, hero2, hero3];
 

@@ -13,13 +13,34 @@ body {
   padding: 6px 0;
   font-size: 14px;
   font-weight: 500;
-
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10000; /* above everything else */
+  z-index: 10000;
+  overflow: hidden;
+  white-space: nowrap;
 }
+
+.scrollWrapper {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 15s linear infinite;
+}
+
+.scrollText {
+  padding-right: 2rem; /* slight spacing between repeats */
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 
 /* 🔹 Navbar Fixed below top banner */
 .navbar {

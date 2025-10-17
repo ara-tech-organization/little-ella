@@ -4,6 +4,7 @@ import kid1 from "/src/assets/kid1.png";
 import kid2 from "/src/assets/kid2.png";
 import bg from "/src/assets/Approach-bg.png";
 import swirl from "/src/assets/blue-swirl.png";
+import { Link } from "react-router-dom";
 
 export default function InspireSection() {
   return (
@@ -41,7 +42,9 @@ export default function InspireSection() {
           <img src={swirl} alt="blue swirl" className={styles.ctaSwirl} />
 
           <div className={styles.ctaWrapper}>
-            <button className={styles.ctaBtn}>Call for Inquiries →</button>
+            <Link to="/contact" className={styles.ctaBtn}>
+              Call for Inquiries →
+            </Link>
           </div>
         </div>
       </div>

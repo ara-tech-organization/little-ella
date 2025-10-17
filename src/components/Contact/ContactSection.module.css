@@ -153,3 +153,21 @@
     gap: 0.8rem;
   }
 }
+.phoneLink {
+  color: inherit; /* keeps your existing text color */
+  text-decoration: none;
+}
+
+.phoneLink:hover {
+  color: #1d62ae; /* or whatever your accent color is */
+  text-decoration: underline;
+}
+.emailLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.emailLink:hover {
+  color: #1d62ae;
+  text-decoration: underline;
+}

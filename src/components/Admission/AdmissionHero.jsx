@@ -38,9 +38,9 @@ function AdmissionHero() {
 
       <div className={styles.grid}>
         {programmes.map((p, index) => (
-          <div 
-            key={p.id} 
-            className={styles.card} 
+          <div
+            key={p.id}
+            className={styles.card}
             data-aos={index % 2 === 0 ? "fade-left" : "fade-right"} // alternate animation
           >
             <div className={styles.cardInner}>
@@ -55,12 +55,12 @@ function AdmissionHero() {
               >
                 <div className={styles.label} style={{ borderColor: p.color }}>
                   <span>{p.title}</span>
-                  <span
+                  {/* <span
                     className={styles.arrow}
                     style={{ backgroundColor: p.color }}
                   >
                     ➜
-                  </span>
+                  </span> */}
                 </div>
               </div>
 
